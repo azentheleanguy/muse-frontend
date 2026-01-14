@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>MUSE Player</title>
-  <link rel="stylesheet" href="css_style.css">
+  <meta charset="UTF-8" />
+  <title>MUSE | Player</title>
+  <link rel="stylesheet" href="css_style.css" />
 </head>
-<body>
+<body class="dark">
 
-  <div class="container">
-    <h1>Now Playing</h1>
+  <div class="player-container">
 
-    <p>Sample Track</p>
+    <h2>Now Playing</h2>
+    <p class="song">Demo Track – MUSE</p>
 
-    <audio controls style="width:100%; margin-top:15px;">
+    <audio id="audio" controls>
       <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-      Your browser does not support audio.
     </audio>
 
-    <button onclick="logout()">Logout</button>
+    <h3>Playlist</h3>
+    <ul class="playlist">
+      <li onclick="playSong(1)">Track 1</li>
+      <li onclick="playSong(2)">Track 2</li>
+      <li onclick="playSong(3)">Track 3</li>
+    </ul>
+
   </div>
 
   <script>
-    function logout() {
-      window.location.href = "index.html";
+    function playSong(num) {
+      const audio = document.getElementById("audio");
+      audio.src =
+        "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-" +
+        num +
+        ".mp3";
+      audio.play();
     }
   </script>
 
