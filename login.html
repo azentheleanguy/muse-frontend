@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>MUSE Login</title>
-  <link rel="stylesheet" href="css_style.css">
+  <meta charset="UTF-8" />
+  <title>MUSE | Login</title>
+  <link rel="stylesheet" href="css_style.css" />
 </head>
-<body>
+<body class="center dark">
 
-  <div class="container">
-    <h1>Login</h1>
+  <h2>Login to MUSE</h2>
 
-    <input type="email" placeholder="Email" required>
-    <input type="password" placeholder="Password" required>
+  <input type="email" id="email" placeholder="Email" />
+  <input type="password" id="password" placeholder="Password" />
 
-    <button onclick="login()">Continue</button>
-  </div>
+  <button class="primary-btn" onclick="login()">Continue</button>
+
+  <p id="error" class="error"></p>
 
   <script>
     function login() {
-      // Frontend-only login (backend later)
-      window.location.href = "player.html";
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (email && password) {
+        window.location.href = "player.html";
+      } else {
+        document.getElementById("error").innerText =
+          "Please enter email and password";
+      }
     }
   </script>
 
 </body>
 </html>
+
