@@ -1,61 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
   <title>MUSE | Login</title>
-  <style>
-    body {
-      background: #000;
-      color: white;
-      display: flex;
-      height: 100vh;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial;
-    }
-    .box {
-      text-align: center;
-    }
-    input {
-      display: block;
-      margin: 10px auto;
-      padding: 10px;
-      width: 250px;
-      border-radius: 6px;
-      border: none;
-    }
-    button {
-      background: #1DB954;
-      border: none;
-      padding: 12px 30px;
-      border-radius: 25px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="box">
-  <h2>Login to MUSE</h2>
+  <div class="center-card">
+    <h2>Login to MUSE</h2>
 
-  <input id="email" type="email" placeholder="Email">
-  <input id="password" type="password" placeholder="Password">
+    <input type="email" placeholder="Email" />
+    <input type="password" placeholder="Password" />
 
-  <button onclick="login()">Continue</button>
-</div>
-<script>
-function login() {
-  const button = document.querySelector("button");
-  button.innerText = "Loading...";
-  button.disabled = true;
+    <button class="btn" onclick="login()">Continue</button>
+  </div>
 
-  // instant redirect (MVP behavior)
-  setTimeout(() => {
-    localStorage.setItem("muse_logged_in", "true");
-    window.location.href = "player.html";
-  }, 600);
-}
-</script>
+  <script>
+    function login() {
+      localStorage.setItem("muse_logged_in", "true");
+      window.location.href = "player.html";
+    }
+  </script>
 
 </body>
 </html>
