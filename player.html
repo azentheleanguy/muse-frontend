@@ -5,6 +5,13 @@
   <title>MUSE | Player</title>
   <link rel="stylesheet" href="css_style.css" />
 </head>
+  <script>
+  const token = localStorage.getItem("muse_token");
+  if (!token) {
+    window.location.href = "login.html";
+  }
+</script>
+
 <body class="dark">
 
   <div class="player-container">
